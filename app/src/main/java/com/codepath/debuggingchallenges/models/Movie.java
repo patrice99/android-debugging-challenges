@@ -1,10 +1,13 @@
 package com.codepath.debuggingchallenges.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Movie {
     private String title;
@@ -38,6 +41,7 @@ public class Movie {
                 e.printStackTrace();
             }
         }
+        Log.d("Movie", String.valueOf(results.size()));
         return results;
     }
 }

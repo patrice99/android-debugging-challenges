@@ -1,8 +1,9 @@
 package com.codepath.debuggingchallenges.activities;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.codepath.debuggingchallenges.R;
 
@@ -16,12 +17,13 @@ public class CurrentDayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_day);
-        tvDay = (TextView) findViewById(R.id.tvDay);
+        tvDay = findViewById(R.id.tvDay);
         tvDay.setText(getDayOfMonth());
     }
 
-    private int getDayOfMonth() {
+    private String getDayOfMonth() {
         Calendar cal = Calendar.getInstance();
-        return cal.get(Calendar.DAY_OF_MONTH);
+        String day = String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
+        return day;
     }
 }

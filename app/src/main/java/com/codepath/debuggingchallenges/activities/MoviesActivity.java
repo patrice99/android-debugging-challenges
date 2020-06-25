@@ -44,11 +44,12 @@ public class MoviesActivity extends AppCompatActivity {
 
 
     private void fetchMovies() {
-        String url = " https://api.themoviedb.org/3/movie/now_playing?api_key=";
+        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=6d1de0b93ec9c02249d4812fcce98720";
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, null, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON response) {
+                Log.d("MoviesActivity.java", "Movies retrieved by JSON successfully!");
                 try {
                     JSONArray moviesJson = response.jsonObject.getJSONArray("results");
                     movies = Movie.fromJSONArray(moviesJson);
